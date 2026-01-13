@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget Demo</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+
+    <!-- Chat Widget Container -->
+    <div class="chat-widget-container">
+        
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-info">
+                <div class="bot-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="header-text">
+                    <h3>Giám đốc Marketing ảo</h3>
+                    <p>Luôn sẵn sàng hỗ trợ bạn</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Example Welcome Message -->
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>Xin chào! Tôi là Giám đốc phòng Marketing ảo của doanh nghiệp bạn. Tôi sẽ đồng hành cùng bạn khám phá và xây dựng nền tảng văn hóa cho doanh nghiệp.</p>
+                </div>
+                <span class="message-time">13:28</span>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-area">
+            <button class="attach-btn"><i class="fa-solid fa-plus"></i></button>
+            <div class="input-wrapper">
+                <textarea id="chatInput" placeholder="Chia sẻ suy nghĩ của bạn về giá trị cốt lõi và triết lý kinh doanh..." rows="1"></textarea>
+            </div>
+            <button class="send-btn" id="sendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        <div class="chat-footer-note">
+            <p><span><i class="fa-regular fa-sun"></i></span> Kết quả phân tích sẽ được hiển thị ở bên phải</p>
+            <p><span><i class="fa-regular fa-sun"></i></span> Nhấn Enter để gửi, Shift + Enter để xuống dòng</p>
+        </div>
+
+    </div>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>

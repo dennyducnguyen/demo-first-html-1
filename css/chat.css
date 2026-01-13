@@ -1,0 +1,318 @@
+:root {
+    --primary-color: #2ecc71;
+    /* Green tone from image */
+    --primary-dark: #27ae60;
+    --bg-color: #f4f6f8;
+    --white: #ffffff;
+    --text-color: #333333;
+    --text-light: #777777;
+    --border-color: #e0e0e0;
+    --bot-msg-bg: #eaeff2;
+    --user-msg-bg: #d1f7d6;
+    /* Light green for user */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius-lg: 16px;
+    --radius-md: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #eef1f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Widget Container */
+.chat-widget-container {
+    width: 100%;
+    max-width: 900px;
+    /* Wide format like the image */
+    height: 80vh;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+/* Header */
+.chat-header {
+    background: var(--white);
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bot-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bot-msg-bg);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.header-text h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.header-text p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--text-color);
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9fafb;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-message {
+    align-self: flex-start;
+}
+
+.user-message {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.message-content {
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.bot-message .message-content {
+    background-color: var(--bot-msg-bg);
+    color: var(--text-color);
+    border-bottom-left-radius: 4px;
+}
+
+.user-message .message-content {
+    background-color: var(--user-msg-bg);
+    /* Or white if prefer cleaner look */
+    color: var(--text-color);
+    border: 1px solid #dcece0;
+    border-bottom-right-radius: 4px;
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.user-message .message-time {
+    margin-right: 4px;
+}
+
+/* Input Area */
+.chat-input-area {
+    background: var(--white);
+    padding: 16px 20px;
+    /* border-top: 1px solid var(--border-color); */
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.input-wrapper {
+    flex: 1;
+    background: #f4f6f8;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: none;
+    max-height: 100px;
+    color: var(--text-color);
+}
+
+textarea::placeholder {
+    color: #aaa;
+}
+
+.attach-btn,
+.send-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    /* Square with rounded corners per image */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.attach-btn {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.attach-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.send-btn {
+    background-color: #f1c40f;
+    /* Yellowish orange from image */
+    color: white;
+    font-size: 1.1rem;
+}
+
+.send-btn:hover {
+    background-color: #f39c12;
+}
+
+.chat-footer-note {
+    background: var(--white);
+    padding: 8px 20px 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.chat-footer-note i {
+    color: #f39c12;
+    margin-right: 4px;
+}
+
+/* Scrollbar */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 3px;
+}
+
+/* Loading Dot Animation */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+    background-color: var(--bot-msg-bg);
+    border-radius: var(--radius-md);
+    width: fit-content;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 4px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+/* Loading & Disabled States */
+.send-btn:disabled,
+.attach-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+textarea:disabled {
+    background-color: #e9ecef;
+    /* Slightly darker to indicate disabled */
+    cursor: not-allowed;
+    color: #999;
+}
+
+/* Spinner adjustment if needed, though FA handles it */
+.fa-spinner {
+    font-size: 1.1rem;
+}
